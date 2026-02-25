@@ -36,6 +36,12 @@ const routes = [
         name: 'cart',
         component: () => import('@/pages/CartPage.vue'),
       },
+      {
+        path: 'checkout',
+        name: 'checkout',
+        component: () => import('@/pages/CheckoutPage.vue'),
+        meta: { requiresAuth: true },
+      },
     ],
   },
 
@@ -80,6 +86,11 @@ const routes = [
         path: 'orders/:orderNumber',
         name: 'order-detail',
         component: () => import('@/pages/account/OrderDetailPage.vue'),
+      },
+      {
+        path: 'success/:orderNumber',
+        name: 'order-success',
+        component: () => import('@/pages/account/OrderSuccessPage.vue'),
       },
       {
         path: 'profile',
